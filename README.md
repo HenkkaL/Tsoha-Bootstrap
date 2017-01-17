@@ -3,7 +3,7 @@
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](https://www.cs.helsinki.fi)
-* [Lainatavara -dokumentaatio](Tsoha-Bootstrap/doc/dokumentaatio.pdf)
+* [Lainatavara -dokumentaatio](https://github.com/HenkkaL/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
 
