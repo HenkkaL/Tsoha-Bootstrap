@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Lenkkikerho](mlyra.users.cs.helsinki.fi/lenkkikerho/)
+* [Lenkkikerho](http://mlyra.users.cs.helsinki.fi/lenkkikerho/)
 * [Lenkkikerho -dokumentaatio](https://github.com/HenkkaL/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
