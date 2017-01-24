@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+ <h1>Omat tietoni</h1>
+
+  <!-- Kaikki lomakkeen elementit form-tagin sisään -->
+  <form>
+    <!-- Tekstikenttä etunimelle -->
+    <div class="form-group">
+      <label>Etunimi</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <!-- Tekstikenttä sukunimelle -->
+    <div class="form-group">
+      <label>Sukunimi</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <!-- Tekstikenttä sähköpostiosoitteelle -->
+    <div class="form-group">
+      <label>Sähköpostiosoite</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <!-- Tekstikenttä käyttäjätunnukselle -->
+    <div class="form-group">
+      <label>Käyttäjätunnus</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <!-- Salasanakenttä salasanalle -->
+    <div class="form-group">
+      <label>Salasana</label>
+      <input type="password" class="form-control">
+    </div>
+
+    <!-- Salasanakenttä uudelle salasanalle -->
+    <div class="form-group">
+      <label>Uusi Salasana</label>
+      <input type="password" class="form-control">
+    </div>
+
+        <!-- Tekstikenttä salasanan varmistukselle -->
+    <div class="form-group">
+      <label>Uusi salasana uudestaan</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Muokkaa tietojani</button>
+    <button type="submit" class="btn btn-danger">Poista minut</button>
+  </form>
+
+  <h2>Omat lenkkini</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Lenkki</th>
+        <th>Päivämäärä</th>
+        <th>Lähtöaika</th>
+        <th>Lähtö/Maali</th>
+        <th>Pituus</th> 
+        <th>Reittikuvaus</th>
+        <th></th>  
+        <th></th>  
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pitkäkosken kymppi</td>
+        <td>Pitkäkosken maja</td>
+        <td>16.00</td>
+        <td>Pitkäkosken majan parkkipaikka</td>
+        <td>10</td>
+        <td>Reitti kulkee luonnonkauniissa maisemassa...</td>
+        <td><a class="btn btn-default btn-sm" href="#">Valitse</a></td>
+        <td><a class="btn btn-default btn-danger" href="#">Poista</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

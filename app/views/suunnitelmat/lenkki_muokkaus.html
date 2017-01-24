@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Muokkaa Lenkkitapahtumaa</h1>
+
+  <ul>
+    <li><strong>Nimi:</strong> Pitkäkosken kymppi km</li>
+    <li><strong>Lähtö/maali:</strong>Pitkäkosken majan parkkipaikka</li>
+    <li><strong>Pituus:</strong> 10 km</li>
+  </ul>
+  <!-- Kuvaus tulee tähän -->
+  <p>
+    Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...
+  </p>    
+    <div class="form-group">
+      <label>Päivämäärä</label>
+      <input type="text" class="form-control" value="16.02.2017">
+    </div>
+    <div class="form-group">
+      <label>Lähtöaika</label>
+      <input type="text" class="form-control" value="16.00">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Tallenna</button>
+      <button class="btn btn-danger">Poista lenkkitapahtuma</button>
+    </div>
+  
+    <h2>Valitse lankkilistasta juoksutapahtumalle lenkki</h2>
+
+    <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Lähtö/Maali</th>
+        <th>Pituus</th> 
+        <th>Reittikuvaus</th>
+        <th></th>    
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pitkäkosken kymppi</td>
+        <td>Pitkäkosken majan parkkipaikka</td>
+        <td>10</td>
+        <td>Reitti kulkee luonnonkauniissa maisemassa...</td>
+        <th><button class="btn btn-default">Valitse lenkiksi</button></th>
+        <th><a class="btn btn-default btn-default" href="lenkki_esittely">muokkaa lenkkiä</a></th>
+      </tr>
+    </tbody>
+  </table>
+
+    <p>
+    <a href="lenkki_kanta" class="btn btn-success">Luo uusi lenkki</a>
+  </p>
+
+
+{% endblock %}

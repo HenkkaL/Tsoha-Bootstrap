@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body></body>
+  <h1>Hae lenkkejä</h1>
+
+  <br><br /> 
+
+  <button class="btn btn-default">Haku</button>
+  
+  <br><br />
+
+  <input type="text" class="form-control" placeholder="Hakusana">
+
+  <br><br />
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Lenkki</th>
+        <th>Päivämäärä</th>
+        <th>Lähtöaika</th>
+        <th>Lähtö/Maali</th>
+        <th>Pituus</th> 
+        <th>Reittikuvaus</th>
+        <th></th>    
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pitkäkosken kymppi</td>
+        <td>16.02.2017</td>
+        <td>16.00</td>
+        <td>Pitkäkosken majan parkkipaikka</td>
+        <td>10</td>
+        <td>Reitti kulkee luonnonkauniissa maisemassa...</td>
+        <th><a class="btn btn-default btn-default" href="lenkki_esittely">Valitse</a></th>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

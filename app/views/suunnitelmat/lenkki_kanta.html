@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Luo uusi lenkki</h1>
+
+  <form>
+
+    <div class="form-group">
+      <label>Nimi</label>
+      <input type="text" class="form-control" value="Lenkin nimi">
+    </div>
+    <div class="form-group">
+      <label>Lähtö/Maali</label>
+      <input type="text" class="form-control" value="Lähtöpaikan tiedot">
+    </div>
+    <div class="form-group">
+      <label>Pituus</label>
+      <input type="text" class="form-control" value="Lenkin pituus">
+    </div>
+    <div class="form-group">
+      <label>Lenkin kuvaus</label>
+      <textarea class="form-control">        Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..
+      </textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Tallenna</button>
+      <a href="lenkki_muokkaus" class="btn btn-success">Takaisin lenkkitapahtuman muokkaukseen</a>
+    </div>
+  </form>
+{% endblock %}
