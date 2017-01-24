@@ -3,6 +3,15 @@
 Yleisiä linkkejä:
 
 * [Lenkkikerho](http://mlyra.users.cs.helsinki.fi/lenkkikerho/)
+* [Etusivu](http://mlyra.users.cs.helsinki.fi/lenkkikerho/etusivu)
+* [Lenkkitapahtumien katselu](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_lista)
+* [Lenkkitapahtuman katselu](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_esittely)
+* [Lenkkitapahtumien luonti ja muokkaus](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_muokkaus)
+* [Lenkkitietojen lisäys ja päivitys](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_kanta)
+* [Omien tietojen katselu ja muokkaus](http://mlyra.users.cs.helsinki.fi/lenkkikerho/omasivu)
+* [Rekisteröityminen](http://mlyra.users.cs.helsinki.fi/lenkkikerho/register)
+* [Kirjautuminen](http://mlyra.users.cs.helsinki.fi/lenkkikerho/login)
+
 * [Lenkkikerho -dokumentaatio](https://github.com/HenkkaL/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
