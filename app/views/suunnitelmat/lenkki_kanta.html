@@ -21,9 +21,33 @@
       <textarea class="form-control">        Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..Lenkin kuvausta..
       </textarea>
     </div>
+     <h2>Valitse lenkille lähtöpaikka</h2>
+
+    <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Osoite</th>
+        <th>Kuvaus</th> 
+        <th></th> 
+        <th><a class="btn btn-default btn-default" href="lenkki_lahto">Luo uusi lähtöpaikka</a></th>       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pitkäkosken maja</td>
+        <td>Pitkäkosken tie 5</td>
+        <td>Lähtöpaikkana pitkäkosken majan edusta</td>       
+        <th><button class="btn btn-default">Valitse lähtöpaikaksi</button></th>
+        <th><a class="btn btn-default btn-default" href="lenkki_lahto">muokkaa lähtöpaikkaa</a></th>
+      </tr>
+          <div class="form-group">
+    </div>
+    </tbody>
+  </table>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Tallenna</button>
-      <a href="lenkki_muokkaus" class="btn btn-success">Takaisin lenkkitapahtuman muokkaukseen</a>
+      <a href="lenkki_muokkaus" class="btn btn-success">Takaisin lenkkikuvauksen muokkaukseen</a>
     </div>
   </form>
 {% endblock %}

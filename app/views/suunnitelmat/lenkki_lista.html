@@ -18,24 +18,24 @@
     <thead>
       <tr>
         <th>Lenkki</th>
+        <th>Kokoontuminen</th>
         <th>Päivämäärä</th>
         <th>Lähtöaika</th>
-        <th>Lähtö/Maali</th>
         <th>Pituus</th> 
-        <th>Reittikuvaus</th>
         <th></th>    
       </tr>
     </thead>
     <tbody>
+    {%for tapahtuma in tapahtumat %}
       <tr>
-        <td>Pitkäkosken kymppi</td>
-        <td>16.02.2017</td>
-        <td>16.00</td>
-        <td>Pitkäkosken majan parkkipaikka</td>
-        <td>10</td>
-        <td>Reitti kulkee luonnonkauniissa maisemassa...</td>
-        <th><a class="btn btn-default btn-default" href="lenkki_esittely">Valitse</a></th>
+        <td>{{tapahtuma.lenkki}}</td>
+        <td>{{tapahtuma.startti}}</td>
+        <td>{{tapahtuma.pvm}}</td>
+        <td>{{tapahtuma.aika}}</td>
+        <td>{{tapahtuma.matka}}</td>
+        <th><a href="{{base_path}}/lenkki_esittely/{{tapahtuma.id}}">Valitse</a></th>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Luo uusi lähtöpaikka</h1>
+
+  <form>
+
+    <div class="form-group">
+      <label>Nimi</label>
+      <input type="text" class="form-control" value="Lähtöpaikan nimi">
+    </div>
+    <div class="form-group">
+      <label>Osoite</label>
+      <input type="text" class="form-control" value="Lähtöpaikan osoite">
+    </div>   
+    <div class="form-group">
+      <label>Lähtöpaikkaan liittyvää lisätietoa</label>
+      <textarea class="form-control"> Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..Lähtöpaikan kuvausta..
+      </textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Tallenna</button>      
+    </div>
+  </form>
+{% endblock %}

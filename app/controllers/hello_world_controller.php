@@ -8,8 +8,26 @@
     }
 
     public static function sandbox(){
-      // Testaa koodiasi täällä
-      View::make('helloworld.html');
+        // Testaa koodiasi täällä
+        $juoksijat = Juoksija::all();
+        $juoksija = Juoksija::find(1);
+        $startit = Startti::all();
+        $startti = Startti::find(1);
+        $lenkit = Lenkki::all();
+        $lenkki = Lenkki::find(1);
+        $tapahtumat = Tapahtuma::all();
+        $tapahtuma = Tapahtuma::find(1);
+        $osallistujat = Osallistuja::all();
+        
+        Kint::dump($juoksijat);
+        Kint::dump($juoksija);
+        Kint::dump($startit);
+        Kint::dump($startti);
+        Kint::dump($lenkit);
+        Kint::dump($lenkki);
+        Kint::dump($tapahtumat);
+        Kint::dump($tapahtuma);
+        Kint::dump($osallistujat);        
     }
 
     public static function etusivu(){
@@ -43,4 +61,9 @@
     public static function lenkki_kanta(){
       View::make('suunnitelmat/lenkki_kanta.html');
     }
+
+    public static function lenkki_lahto(){
+      View::make('suunnitelmat/lenkki_lahto.html');
+    }
+    
   }

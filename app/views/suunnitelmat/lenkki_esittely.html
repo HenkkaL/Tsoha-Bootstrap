@@ -1,19 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Pitkäkosken kymppi</h1>
+  <h1>{{tapahtuma.lenkki}}</h1>
   <!-- Painikkeet tähän -->
   <p>
     <button class="btn btn-default">Osallistu</button> <a href="#" class="btn btn-danger">Peru osallistuminen</a>
   </p>
   <!-- Tiedot tulee listana tähän -->
   <ul>
-    <li><strong>Päivämäärä:</strong> 11.05.2017</li>
-    <li><strong>Lähtöaika:</strong> 16.00</li>
-    <li><strong>Lähtö/maali:</strong>Pitkäkosken majan parkkipaikka</li>
-    <li><strong>Pituus:</strong> 10 km</li>
+    <li><strong>Päivämäärä:</strong> {{tapahtuma.pvm}}</li>
+    <li><strong>Lähtöaika:</strong> {{tapahtuma.aika}}</li>
+    <li><strong>Lähtö/maali:</strong>{{tapahtuma.startti}}</li>
+    <li><strong>Osoite:</strong>{{tapahtuma.osoite}}</li>
+    <li><strong>Pituus:</strong> {{tapahtuma.matka}}</li>
   </ul>
   <!-- Kuvaus tulee tähän -->
+
+  <h3>Lenkin kuvaus</h3>
   <p>
-    Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...Reitti kulkee luonnonkauniissa maisemassa...
+    {{tapahtuma.reitti}}
+  </p>
+
+  <h3>Huomio (lenkkitapahtumakohtaista lisätietoa)</h3>
+    <p>
+    {{tapahtuma.kuvaus}}
+  </p>
+
+    <h3>Huomio (Lähtöpaikkaan liittyvää lisätietoa)</h3>
+    <p>
+    {{tapahtuma.starttikuvaus}}
   </p>
 {% endblock %}

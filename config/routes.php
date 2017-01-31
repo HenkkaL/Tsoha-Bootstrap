@@ -11,18 +11,18 @@
     $routes->get('/etusivu', function() {
     HelloWorldController::etusivu();
   });
-
     $routes->get('/lenkki_lista', function() {
-    HelloWorldController::lenkki_lista();
+    LenkkiController::tapahtumaLista();
   });
 
-    $routes->get('/lenkki_esittely', function() {
-    HelloWorldController::lenkki_esittely();
+    $routes->get('/lenkki_esittely/:id', function($id) {
+    LenkkiController::tapahtuma($id);
   });
+
 
     $routes->get('/lenkki_muokkaus', function() {
-    HelloWorldController::lenkki_muokkaus();
-  });
+    LenkkiController::lenkkiLista();
+  });    
 
     $routes->get('/omasivu', function() {
     HelloWorldController::omasivu();
@@ -38,4 +38,8 @@
 
       $routes->get('/lenkki_kanta', function() {
     HelloWorldController::lenkki_kanta();
+  });    
+
+      $routes->get('/lenkki_lahto', function() {
+    HelloWorldController::lenkki_lahto();
   });        
