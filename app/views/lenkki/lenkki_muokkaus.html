@@ -39,7 +39,6 @@
         <th>Lähtö/Maali</th>
         <th>Pituus</th> 
         <th>Reittikuvaus</th>
-        <th></th>    
         <th></th>
       </tr>
     </thead>
@@ -50,8 +49,7 @@
         <td>{{lenkki.startti}}</td>
         <td>{{lenkki.matka}}</td>
         <td>{{lenkki.reitti}}</td>
-        <th><a href="{{base_path}}/suunnitelmat/lenkki_esittely/{{lenkki.id}}">Valitse lenkiksi</a></th>
-        <th><a class="btn btn-default btn-default" href="lenkki_esittely">muokkaa lenkkiä</a></th>
+        <th><a href="{{base_path}}/lenkki_muokkaus" class="btn btn-danger">Valitse</a></th>
       </tr>
       {% endfor %}
           <div class="form-group">

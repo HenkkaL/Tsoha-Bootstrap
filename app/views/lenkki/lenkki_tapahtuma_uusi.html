@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Luo lenkkitapahtuma</h1>
+  
+  <h2>{{lenkki.nimi}}</h2>
+  
+  <form method="post" action="{{base_path}}/lenkki">
+     <div class="form-group">
+      <label>Lenkin id</label>
+      <input type="text" name="lenkki" value={{lenkki.id}} class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Päivämäärä</label>
+      <input type="date" name="pvm" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Lähtöaika</label>
+      <input type="time" name="aika" class="form-control">
+    </div>
+    <div>
+      <label>Lenkkikohtaista lisätietoa</label>
+        <textarea name="kuvaus" class="form-control"></textarea>
+    </div>
+      <div class="form-group">
+      <button type="submit" class="btn btn-primary">Tallenna lenkkitapahtuma</button>
+    </div>
+      
+  </form>
+<ul>
+    <li><strong>Lähtö/maali:</strong>{{lenkki.startti}}</li>
+    <li><strong>Pituus:</strong> {{lenkki.matka}}</li>
+    
+    
+  </ul>
+  <!-- Kuvaus tulee tähän -->
+
+  <h3>Lenkin kuvaus</h3>
+  <p>
+    {{lenkki.reitti}}
+  </p>
+  
+{% endblock %}

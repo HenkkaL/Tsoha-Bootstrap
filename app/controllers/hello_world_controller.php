@@ -31,39 +31,47 @@
     }
 
     public static function etusivu(){
-      View::make('suunnitelmat/etusivu.html');
+      View::make('etusivu.html');
     }
 
     public static function lenkki_lista(){
-      View::make('suunnitelmat/lenkki_lista.html');
+      View::make('lenkki/lenkki_lista.html');
     }
 
     public static function lenkki_esittely(){
-      View::make('suunnitelmat/lenkki_esittely.html');
+      View::make('lenkki/lenkki_esittely.html');
     }
 
     public static function lenkki_muokkaus(){
-      View::make('suunnitelmat/lenkki_muokkaus.html');
+      View::make('lenkki/lenkki_muokkaus.html');
     }
 
     public static function omasivu(){
-      View::make('suunnitelmat/omasivu.html');
+      View::make('asiakas/omasivu.html');
     }
 
     public static function register(){
-      View::make('suunnitelmat/register.html');
+      View::make('asiakas/register.html');
     }
 
     public static function login(){
-      View::make('suunnitelmat/login.html');
+      View::make('asiakas/login.html');
     }
 
     public static function lenkki_kanta(){
-      View::make('suunnitelmat/lenkki_kanta.html');
+      View::make('lenkki/lenkki_kanta.html');
     }
 
     public static function lenkki_lahto(){
-      View::make('suunnitelmat/lenkki_lahto.html');
+      View::make('lenkki/lenkki_lahto.html');
     }
+    
+    public static function admin(){
+      View::make('asiakas/admin.html');
+    }  
+    
+    public static function lenkki_uusi(){
+      View::make('lenkki/lenkki_uusi.html');
+    } 
     
   }

@@ -33,20 +33,21 @@
             <span class="icon-bar"></span>
           </button>
           <!-- Sovelluksen nimi -->
-          <a class="navbar-brand" href="etusivu">Lenkkikerho</a>
+          <a class="navbar-brand" href="{{base_path}}/etusivu">Lenkkikerho</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="nav navbar-nav">
             <!-- Navigaation linkit -->
-            <li><a href="etusivu">Etusivu</a></li>
-            <li><a href="lenkki_lista">Lenkit</a></li>
+            <li><a href="{{base_path}}/etusivu">Etusivu</a></li>
+            <li><a href="{{base_path}}/lenkki_lista">Lenkit</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="omasivu">Omat tiedot</a></li>
-            <li><a href="login">Kirjaudu sisään</a></li>
-            <li><a href="register">Rekisteröidy palveluun</a></li>
+            <li><a href="{{base_path}}/omasivu">Omat tiedot</a></li>
+            <li><a href="{{base_path}}/login">Kirjaudu sisään</a></li>
+            <li><a href="{{base_path}}/register">Rekisteröidy palveluun</a></li>
+            <li><a href="{{base_path}}/admin">admin</a></li>
           </ul>
         </div>
       </div>

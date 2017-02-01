@@ -1,7 +1,7 @@
 <?php
 
   $routes->get('/', function() {
-    HelloWorldController::index();
+    HelloWorldController::etusivu();
   });
 
   $routes->get('/hiekkalaatikko', function() {
@@ -15,9 +15,22 @@
     LenkkiController::tapahtumaLista();
   });
 
+    $routes->post('/lenkki', function() {
+    LenkkiController::store();
+  });
+
+    $routes->get('/lenkki_uusi', function() {
+    LenkkiController::lenkkiUusi();
+  });
+  
+    $routes->get('/lenkki_tapahtuma_uusi/:id', function($id) {
+    LenkkiController::lenkkiTapahtumaUusi($id);
+  });  
+  
     $routes->get('/lenkki_esittely/:id', function($id) {
     LenkkiController::tapahtuma($id);
   });
+  
 
 
     $routes->get('/lenkki_muokkaus', function() {
@@ -42,4 +55,8 @@
 
       $routes->get('/lenkki_lahto', function() {
     HelloWorldController::lenkki_lahto();
-  });        
+  });    
+  
+      $routes->get('/admin', function() {
+    HelloWorldController::admin();
+  });

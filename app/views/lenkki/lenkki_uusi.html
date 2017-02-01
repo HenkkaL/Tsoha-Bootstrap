@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Luo lenkkitapahtuma</h1>
+  
+    <h2>Valitse lenkkilistasta juoksutapahtumalle lenkki</h2>
+
+    <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Lähtö/Maali</th>
+        <th>Pituus</th> 
+        <th>Reittikuvaus</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for lenkki in lenkit %}
+      <tr>
+        <td>{{lenkki.nimi}}</td>
+        <td>{{lenkki.startti}}</td>
+        <td>{{lenkki.matka}}</td>
+        <td>{{lenkki.reitti}}</td>
+        <th><a href="{{base_path}}/lenkki_tapahtuma_uusi/{{lenkki.id}}">Valitse</a></th>
+      </tr>
+      {% endfor %}
+          <div class="form-group">
+    </div>
+    </tbody>
+  </table>
+    <p>
+    <a type="submit" class="btn btn-success">Luo uusi lenkki</a>
+  </p>
+  </form>
+
+{% endblock %}
