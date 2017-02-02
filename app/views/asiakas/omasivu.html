@@ -7,25 +7,25 @@
     <!-- Tekstikenttä etunimelle -->
     <div class="form-group">
       <label>Etunimi</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" value={{juoksija.etunimi}}>
     </div>
 
     <!-- Tekstikenttä sukunimelle -->
     <div class="form-group">
       <label>Sukunimi</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" value={{juoksija.sukunimi}}>
     </div>
 
     <!-- Tekstikenttä sähköpostiosoitteelle -->
     <div class="form-group">
       <label>Sähköpostiosoite</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" value={{juoksija.sposti}}>
     </div>
 
     <!-- Tekstikenttä käyttäjätunnukselle -->
     <div class="form-group">
       <label>Käyttäjätunnus</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" value={{juoksija.knimi}}>
     </div>
 
     <!-- Salasanakenttä salasanalle -->
@@ -34,17 +34,6 @@
       <input type="password" class="form-control">
     </div>
 
-    <!-- Salasanakenttä uudelle salasanalle -->
-    <div class="form-group">
-      <label>Uusi Salasana</label>
-      <input type="password" class="form-control">
-    </div>
-
-        <!-- Tekstikenttä salasanan varmistukselle -->
-    <div class="form-group">
-      <label>Uusi salasana uudestaan</label>
-      <input type="text" class="form-control">
-    </div>
 
     <button type="submit" class="btn btn-primary">Muokkaa tietojani</button>
     <button type="submit" class="btn btn-danger">Poista minut</button>
@@ -60,8 +49,6 @@
         <th>Lähtöaika</th>
         <th>Lähtö/Maali</th>
         <th>Pituus</th> 
-        <th>Reittikuvaus</th>
-        <th></th>  
         <th></th>  
       </tr>
     </thead>
@@ -71,9 +58,7 @@
         <td>Pitkäkosken maja</td>
         <td>16.00</td>
         <td>Pitkäkosken majan parkkipaikka</td>
-        <td>10</td>
-        <td>Reitti kulkee luonnonkauniissa maisemassa...</td>
-        <td><a class="btn btn-default btn-sm" href="#">Valitse</a></td>
+        <td>10</td>    
         <td><a class="btn btn-default btn-danger" href="#">Poista</a></td>
 
       </tr>

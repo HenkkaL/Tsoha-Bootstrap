@@ -1,43 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
- <h1>Rekisteröidy palvelun käyttäjäksi</h1>
 
-  <!-- Kaikki lomakkeen elementit form-tagin sisään -->
-  <form>
+ <h1>Rekisteröidy palvelun käyttäjäksi</h1>
+ 
+  <form method="post" action="{{base_path}}/juoksija">
     <!-- Tekstikenttä etunimelle -->
     <div class="form-group">
       <label>Etunimi</label>
-      <input type="text" class="form-control">
+      <input type="text" name="etunimi" class="form-control">
     </div>
 
     <!-- Tekstikenttä sukunimelle -->
     <div class="form-group">
       <label>Sukunimi</label>
-      <input type="text" class="form-control">
+      <input type="text" name="sukunimi" class="form-control">
     </div>
 
     <!-- Tekstikenttä sähköpostiosoitteelle -->
     <div class="form-group">
       <label>Sähköpostiosoite</label>
-      <input type="text" class="form-control">
+      <input type="text" name="sposti" class="form-control">
     </div>
 
     <!-- Tekstikenttä käyttäjätunnukselle -->
     <div class="form-group">
       <label>Käyttäjätunnus</label>
-      <input type="text" class="form-control">
+      <input type="text" name="knimi" class="form-control">
     </div>
 
     <!-- Salasanakenttä salasanalle -->
     <div class="form-group">
       <label>Salasana</label>
-      <input type="password" class="form-control">
-    </div>
-
-        <!-- Tekstikenttä salasanan varmistukselle -->
-    <div class="form-group">
-      <label>Salasana uudestaan</label>
-      <input type="text" class="form-control">
+      <input type="password" name="salasana" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-primary">Lähetä tiedot</button>

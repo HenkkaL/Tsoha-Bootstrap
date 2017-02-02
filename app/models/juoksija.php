@@ -40,5 +40,12 @@ class Juoksija extends BaseModel{
             }
             return null;
         }
+        
+        public function save(){
+            $query = DB::connection()->prepare('INSERT INTO Juoksija (etunimi, sukunimi, sposti, knimi, salasana) VALUES (:etunimi, :sukunimi, :sposti, :knimi, :salasana) RETURNING id');
+            $query->execute(array('etunimi' => $this->etunimi, 'sukunimi' => $this->sukunimi, 'sposti' => $this->sposti, 'knimi' => $this->knimi, 'salasana' => $this->salasana));
+            $row = $query->fetch();
+            $this->id = $row['id'];            
+        }                
 
 }

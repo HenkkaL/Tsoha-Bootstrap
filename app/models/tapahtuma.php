@@ -59,8 +59,7 @@ class Tapahtuma extends BaseModel{
             $query = DB::connection()->prepare('INSERT INTO Tapahtuma (pvm, aika, kuvaus, lenkki) VALUES (:pvm, :aika, :kuvaus, :lenkki) RETURNING id');
             $query->execute(array('pvm' => $this->pvm, 'aika' => $this->aika, 'kuvaus' => $this->kuvaus, 'lenkki' => $this->lenkki));
             $row = $query->fetch();
-            $this->id = $row['id'];
-            
+            $this->id = $row['id'];            
         }        
 
 }

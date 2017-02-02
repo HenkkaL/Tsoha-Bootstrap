@@ -30,8 +30,6 @@
     $routes->get('/lenkki_esittely/:id', function($id) {
     LenkkiController::tapahtuma($id);
   });
-  
-
 
     $routes->get('/lenkki_muokkaus', function() {
     LenkkiController::lenkkiLista();
@@ -60,3 +58,15 @@
       $routes->get('/admin', function() {
     HelloWorldController::admin();
   });
+  
+      $routes->get('/juoksijalista', function() {
+    JuoksijaController::juoksijalista();
+  });  
+
+    $routes->get('/omasivu/:id', function($id) {
+    JuoksijaController::juoksija($id);
+  });  
+  
+    $routes->post('/juoksija', function() {
+    JuoksijaController::store();
+  });  
