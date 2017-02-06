@@ -3,7 +3,9 @@ class Juoksija extends BaseModel{
 	public $id, $knimi, $etunimi, $sukunimi, $sposti, $salasana;
 	public function _construct($attributes){
 		parent::_construct($attributes);
+                $this->validators = array('validate_etunimi', 'validate_sukunimi', 'validate_knimi', 'validate_sposti', 'validate_salasana');
 	}
+     
         
         public static function all(){
             $query = DB::connection()->prepare('SELECT * FROM Juoksija');
@@ -46,6 +48,57 @@ class Juoksija extends BaseModel{
             $query->execute(array('etunimi' => $this->etunimi, 'sukunimi' => $this->sukunimi, 'sposti' => $this->sposti, 'knimi' => $this->knimi, 'salasana' => $this->salasana));
             $row = $query->fetch();
             $this->id = $row['id'];            
-        }                
+        }         
+        
+        public function validate_etunimi(){
+            $errors = array();
+            if ($this->etunimi == '' || $this->etunimi == null){
+                $errors[] = 'Etunimi on pakollinen kenttä';                        
+            }
+            if (strlen($this->etunimi) < 3){
+                $errors[] = 'Etunimessä pitää olla ainakin kolme kirjainta';    
+            }
+        }
+        
+        public function validate_sukunimi(){
+            $errors = array();
+            if ($this->sukunimi == '' || $this->sukunimi == null){
+                $errors[] = 'Sukunimi on pakollinen kenttä';                        
+            }
+            if (strlen($this->sukunimi) < 3){
+                $errors[] = 'Sukunimessä pitää olla ainakin kolme kirjainta';
+            }
+        }
+        
+        public function validate_knimi(){
+            $errors = array();
+            if ($this->knimi == '' || $$this->knimi == null){
+                $errors[] = 'Käyttäjänimi on pakollinen kenttä';                        
+            }
+            if (strlen($this->knimi) < 3){
+                $errors[] = 'käyttäjänimessä pitää olla ainakin kolme kirjainta';
+            }
+        }
+        
+        public function validate_sposti(){
+            $errors = array();
+            if ($$this->sposti == '' || $$this->sposti == null){
+                $errors[] = 'Sähköpostiosoite on pakollinen kenttä';                        
+            }
+            if (strlen($this->etunimi) < 8){
+                $errors[] = 'sähköpostiosoitteessa pitää olla ainakin kahdeksan kirjainta';
+            }
+        }        
+
+        public function validate_salasana(){
+            $errors = array();
+            if ($$this->salasana == '' || $$this->salasana == null){
+                $errors[] = 'Salasana on pakollinen kenttä';                        
+            }
+            if (strlen($this->etunimi) < 8){
+                $errors[] = 'Salasanassa pitää olla ainakin kahdeksan kirjainta';
+            }
+        }        
+        
 
 }

@@ -5,10 +5,9 @@
   <h2>{{lenkki.nimi}}</h2>
   
   <form method="post" action="{{base_path}}/lenkki">
-     <div class="form-group">
-      <label>Lenkin id</label>
-      <input type="text" name="lenkki" value={{lenkki.id}} class="form-control">
-    </div>
+      
+      <input type="hidden" name="lenkki" value={{lenkki.id}} class="form-control">
+
     <div class="form-group">
       <label>Päivämäärä</label>
       <input type="date" name="pvm" class="form-control">

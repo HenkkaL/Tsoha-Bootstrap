@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+
+<div class="alert alert-success">
+  {{message}}
+</div>
   <h1>{{tapahtuma.lenkki}}</h1>
-  <!-- Painikkeet tähän -->
+  
   <p>
     <button class="btn btn-default">Osallistu</button> <a href="#" class="btn btn-danger">Peru osallistuminen</a>
   </p>
-  <!-- Tiedot tulee listana tähän -->
+
   <ul>
     <li><strong>Päivämäärä:</strong> {{tapahtuma.pvm}}</li>
     <li><strong>Lähtöaika:</strong> {{tapahtuma.aika}}</li>
@@ -13,7 +17,6 @@
     <li><strong>Osoite:</strong>{{tapahtuma.osoite}}</li>
     <li><strong>Pituus:</strong> {{tapahtuma.matka}}</li>
   </ul>
-  <!-- Kuvaus tulee tähän -->
 
   <h3>Lenkin kuvaus</h3>
   <p>

@@ -9,25 +9,16 @@
 
     public static function sandbox(){
         // Testaa koodiasi täällä
-        $juoksijat = Juoksija::all();
-        $juoksija = Juoksija::find(1);
-        $startit = Startti::all();
-        $startti = Startti::find(1);
-        $lenkit = Lenkki::all();
-        $lenkki = Lenkki::find(1);
-        $tapahtumat = Tapahtuma::all();
-        $tapahtuma = Tapahtuma::find(1);
-        $osallistujat = Osallistuja::all();
+        $juoksija = new Juoksija(array(
+            'etunimi' => 'e',
+            'sukunimi' => 'e',
+            'knimi' => '',
+            'sposti' => 'e',
+            'salasana' => 'e'
+        ));  
+        $errors = $juoksija->errors();
         
-        Kint::dump($juoksijat);
-        Kint::dump($juoksija);
-        Kint::dump($startit);
-        Kint::dump($startti);
-        Kint::dump($lenkit);
-        Kint::dump($lenkki);
-        Kint::dump($tapahtumat);
-        Kint::dump($tapahtuma);
-        Kint::dump($osallistujat);        
+        Kint::dump($errors);
     }
 
     public static function etusivu(){

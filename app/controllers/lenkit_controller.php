@@ -33,8 +33,7 @@ class LenkkiController extends BaseController{
                 'pvm' => $params['pvm'],
                 'aika' => $params['aika'],
                 'kuvaus' => $params['kuvaus'],
-                'lenkki' => $params['lenkki'],
-                'salasana' => $params['salasana']
+                'lenkki' => $params['lenkki']
                 ));
             $tapahtuma->save();
             

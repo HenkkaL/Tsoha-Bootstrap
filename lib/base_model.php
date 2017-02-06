@@ -18,12 +18,19 @@
     public function errors(){
       // Lisätään $errors muuttujaan kaikki virheilmoitukset taulukkona
       $errors = array();
-
+      $metodi = '';
       foreach($this->validators as $validator){
-        // Kutsu validointimetodia tässä ja lisää sen palauttamat virheet errors-taulukkoon
+          $metodi = $validator();
+          $errors = array_merge($errors, validators);
       }
 
       return $errors;
     }
 
+            public function validate_string_length($string, $length){
+            if (strlen($string) < $length){
+                return false;
+            }
+            return true;
+        }    
   }

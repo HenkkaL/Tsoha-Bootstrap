@@ -2,33 +2,32 @@
 {% block content %}
  <h1>Omat tietoni</h1>
 
-  <!-- Kaikki lomakkeen elementit form-tagin sisään -->
+  <div class="alert alert-success">
+  {{message}}
+</div>
+ 
   <form>
-    <!-- Tekstikenttä etunimelle -->
+    
     <div class="form-group">
       <label>Etunimi</label>
       <input type="text" class="form-control" value={{juoksija.etunimi}}>
     </div>
 
-    <!-- Tekstikenttä sukunimelle -->
     <div class="form-group">
       <label>Sukunimi</label>
       <input type="text" class="form-control" value={{juoksija.sukunimi}}>
     </div>
 
-    <!-- Tekstikenttä sähköpostiosoitteelle -->
     <div class="form-group">
       <label>Sähköpostiosoite</label>
       <input type="text" class="form-control" value={{juoksija.sposti}}>
     </div>
 
-    <!-- Tekstikenttä käyttäjätunnukselle -->
     <div class="form-group">
       <label>Käyttäjätunnus</label>
       <input type="text" class="form-control" value={{juoksija.knimi}}>
     </div>
 
-    <!-- Salasanakenttä salasanalle -->
     <div class="form-group">
       <label>Salasana</label>
       <input type="password" class="form-control">
