@@ -12,9 +12,7 @@
         <th>etunimi</th>
         <th>Sähköpostiosoite</th>
         <th>Kayttajatunnus</th>
-        <th></th>
-        <th></th> 
-        <th></th>    
+        <th></th>   
       </tr>
     </thead>
     <tbody>
@@ -25,9 +23,7 @@
         <td>{{juoksija.sposti}}</td>
         <td>{{juoksija.knimi}}</td>
         <th><a href="{{base_path}}/omasivu/{{juoksija.id}}" class="btn btn-success">Katsele</a></th>
-        <th><a href="{{base_path}}/juoksija/??" class="btn btn-success">Muokkaa</a></th>
-        <th><a href="{{base_path}}/juoksija/{{juoksija.id}}" class="btn btn-danger">Poista</a></th>
-      </tr>
+       </tr>
       {% endfor %}
     </tbody>
   </table>

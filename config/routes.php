@@ -23,9 +23,25 @@
     LenkkiController::lenkkiUusi();
   });
   
+    $routes->get('/tapahtuma_lista_muokkaus', function() {
+    LenkkiController::tapahtumaListaMuokkaus();
+  });  
+  
     $routes->get('/lenkki_tapahtuma_uusi/:id', function($id) {
     LenkkiController::lenkkiTapahtumaUusi($id);
   });  
+  
+    $routes->get('/tapahtuma_muokkaa/:id/edit', function($id) {
+    LenkkiController::edit($id);
+  });    
+  
+      $routes->post('/lenkki_esittely/:id/destroy', function($id) {
+    LenkkiController::destroy($id);
+  });    
+  
+    $routes->post('/lenkki_esittely/:id/edit', function($id) {
+    LenkkiController::update($id);
+  });    
   
     $routes->get('/lenkki_esittely/:id', function($id) {
     LenkkiController::tapahtuma($id);
@@ -34,10 +50,6 @@
     $routes->get('/lenkki_muokkaus', function() {
     LenkkiController::lenkkiLista();
   });    
-
-    $routes->get('/omasivu', function() {
-    HelloWorldController::omasivu();
-  });
 
     $routes->get('/register', function() {
     HelloWorldController::register();
@@ -70,3 +82,17 @@
     $routes->post('/juoksija', function() {
     JuoksijaController::store();
   });  
+  
+      $routes->get('/omasivu/:id/edit', function($id) {
+    JuoksijaController::edit($id);
+  });  
+  
+      $routes->post('/omasivu/:id/edit', function($id) {
+    JuoksijaController::update($id);
+  });  
+  
+      $routes->post('/omasivu/:id/destroy', function($id) {
+    JuoksijaController::destroy($id);
+  });  
+  
+  

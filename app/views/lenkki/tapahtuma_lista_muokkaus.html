@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Lenkkitapahtumat</h1>
+
+  <h1>Lenkkitapahtumien muokkaus</h1>
+  
+  <div class="alert alert-success">
+  {{message}}  
+</div>  
+
+  <br><br />
 
   <table class="table table-bordered table-striped">
     <thead>
@@ -22,7 +29,7 @@
         <td>{{tapahtuma.pvm}}</td>
         <td>{{tapahtuma.aika}}</td>
         <td>{{tapahtuma.matka}}</td>
-        <th><a href="{{base_path}}/lenkki_esittely/{{tapahtuma.id}}" class="btn btn-success">Valitse</a></th>
+        <th><a href="{{base_path}}/tapahtuma_muokkaa/{{tapahtuma.id}}/edit" class="btn btn-success">Muokkaa</a></th>
       </tr>
       {% endfor %}
     </tbody>

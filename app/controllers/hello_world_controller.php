@@ -9,14 +9,15 @@
 
     public static function sandbox(){
         // Testaa koodiasi täällä
-        $juoksija = new Juoksija(array(
-            'etunimi' => 'e',
-            'sukunimi' => 'e',
-            'knimi' => '',
-            'sposti' => 'e',
-            'salasana' => 'e'
+        $testi = new Juoksija(array(
+            'etunimi' => '',
+            'sukunimi' => 'eestiläinen',
+            'knimi' => 'ee',
+            'sposti' => 'aaaaaaa@ffffffe',
+            'salasana' => 'eetueetu'
         ));  
-        $errors = $juoksija->errors();
+        
+        $errors = $testi->errors();
         
         Kint::dump($errors);
     }

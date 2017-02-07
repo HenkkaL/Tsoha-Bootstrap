@@ -2,8 +2,8 @@
 class Startti extends BaseModel{
 	
 	public $id, $nimi, $osoite, $kuvaus;
-        public function _construct($attributes){
-		parent::_construct($attributes);
+        public function __construct($attributes){
+		parent::__construct($attributes);
 	}
         
         public static function all(){
