@@ -8,9 +8,6 @@ Yleisiä linkkejä:
 Lenkkitapahtumien listausnäkymä (täältä voi valita myös kohteen):
 * [Lenkkitapahtumien katselu](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_lista)
 
-Tietyn lenkkitapahtumakohteen esittelynäkymä:
-* [Lenkkitapahtuman katselu](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_esittely)
-
 Uusi admin puoli, josta päästään lenkkitapahtuman lisäykseen sekä asiakastietoihin:
 * [Admin](http://mlyra.users.cs.helsinki.fi/lenkkikerho/admin)
 
@@ -22,20 +19,15 @@ Lenkkitapahtuman luonti, osa 2 (Tässä osassa täytetään lenkkitapahtuman muu
 Juoksijoiden listaukseen kuljetaan admin sivun kautta:
 * [Juoksijoiden listaus](http://mlyra.users.cs.helsinki.fi/lenkkikerho/juoksijalista)
 
-Yksittäisen juoksijan tietoja katsellaan juoksijan omalta sivulta. Koska sovelluksessa ei ole vielä kirjautumista, voi yksittäisen juoksijan tietoja katsella valitsemalla edellisen sivun juoksijalistalta kohteen painamalla ketsele -nappia.
+VIIKKO 4:
 
 Juoksijan lisäys on toteutettu rekisteröitymisen kautta:
 * [Rekisteröitymissivu](http://mlyra.users.cs.helsinki.fi/lenkkikerho/register)
 
-
-Muita sivupohjia (kesken):
-* [Lenkkitapahtumien ja muokkaus](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_muokkaus)
-* [Lenkkitietojen lisäys ja päivitys](http://mlyra.users.cs.helsinki.fi/lenkkikerho/lenkki_kanta)
-* [Omien tietojen katselu ja muokkaus](http://mlyra.users.cs.helsinki.fi/lenkkikerho/omasivu)
-* [Rekisteröityminen](http://mlyra.users.cs.helsinki.fi/lenkkikerho/register)
+Kirjautuminen (käyttäjätunnus: testikäyttäjä, salasana: testikäyttäjä). Toiminta ohjataan luokan UserController kautta.
 * [Kirjautuminen](http://mlyra.users.cs.helsinki.fi/lenkkikerho/login)
 
-
+Viikon neljä CRUD kohdistuu luokkaan Juoksija. Lisäys rekisteröitymällä käyttäjäksi. Muokkaus ja poisto kirjautuneelle käyttäjälle omien tietojen kautta. Juoksija -luokassa toteutettu save, update, destroy sekä validaattorit. Toimintoja ohjataan luokan JuoksijaController kautta.
 
 * [Lenkkikerho -dokumentaatio](https://github.com/HenkkaL/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
