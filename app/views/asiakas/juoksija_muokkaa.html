@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
- <h1>Omat tietoni</h1>
+  {% if user_logged_in%}
+ <h1>Muokkaa käyttäjän {{user_logged_in.knimi}} asiakastietoja</h1>
+{% endif %}
 
    {% if errors %}
  <div class="alert alert-danger">
@@ -43,34 +45,11 @@
     
   </form>
 
+ <p></p>
  
  <form method="post" action="{{base_path}}/omasivu/{{juoksija.id}}/destroy" style="display: inline-block;">
   <button type="submit" class="btn btn-danger">Poista</button>
 </form>
  
-  <h2>Omat lenkkini</h2>
 
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Lenkki</th>
-        <th>Päivämäärä</th>
-        <th>Lähtöaika</th>
-        <th>Lähtö/Maali</th>
-        <th>Pituus</th> 
-        <th></th>  
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Pitkäkosken kymppi</td>
-        <td>Pitkäkosken maja</td>
-        <td>16.00</td>
-        <td>Pitkäkosken majan parkkipaikka</td>
-        <td>10</td>    
-        <td><a class="btn btn-default btn-danger" href="#">Poista</a></td>
-
-      </tr>
-    </tbody>
-  </table>
 {% endblock %}

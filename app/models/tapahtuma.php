@@ -31,9 +31,6 @@ class Tapahtuma extends BaseModel{
         }
         
         public static function find($id){
-            $matka;
-            $reitti;
-            $startti;
             $query = DB::connection()->prepare('SELECT T.id AS id, L.nimi AS lenkki, T.pvm AS pvm, T.aika AS aika, L.matka AS matka,'
                     . ' S.nimi AS startti, S.osoite AS osoite, S.kuvaus AS starttikuvaus, L.reitti AS reitti, T.kuvaus AS kuvaus'
                     . ' FROM Tapahtuma T LEFT JOIN Lenkki L ON T.lenkki=L.id LEFT JOIN Startti S ON L.startti=S.id WHERE T.id = :id LIMIT 1');
@@ -57,6 +54,9 @@ class Tapahtuma extends BaseModel{
             }
             return null;
         }
+        
+
+        
         public function save(){
             $query = DB::connection()->prepare('INSERT INTO Tapahtuma (pvm, aika, kuvaus, lenkki) VALUES (:pvm, :aika, :kuvaus, :lenkki) RETURNING id');
             $query->execute(array('pvm' => $this->pvm, 'aika' => $this->aika, 'kuvaus' => $this->kuvaus, 'lenkki' => $this->lenkki));

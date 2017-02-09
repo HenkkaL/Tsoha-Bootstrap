@@ -5,7 +5,25 @@ class Juoksija extends BaseModel{
 		parent::__construct($attributes);
                 $this->validators = array('validate_etunimi', 'validate_sukunimi', 'validate_knimi', 'validate_sposti', 'validate_salasana');
 	}
+        
+            public static function authenticate($knimi, $salasana){
      
+      $query = DB::connection()->prepare('SELECT * FROM Juoksija WHERE knimi = :knimi AND salasana = :salasana LIMIT 1');
+      $query->execute(array('knimi' => $knimi, 'salasana' => $salasana));
+      $row = $query->fetch();
+      if($row){
+                $juoksija = new Juoksija(array(
+                    'id' => $row['id'],
+                    'knimi' => $row['knimi'],
+                    'etunimi' => $row['etunimi'],
+                    'sukunimi' => $row['sukunimi'],
+                    'sposti' => $row['sposti']
+                ));
+                return $juoksija;
+      }
+      return NULL;
+    }
+       
         
         public static function all(){
             $query = DB::connection()->prepare('SELECT * FROM Juoksija');
@@ -41,6 +59,45 @@ class Juoksija extends BaseModel{
                 return $juoksija;
             }
             return null;
+        }
+        
+        public static function findKnimi($knimi){
+            $query = DB::connection()->prepare('SELECT * FROM Juoksija WHERE knimi = :knimi LIMIT 1');
+            $query->execute(array('knimi' => $knimi));
+            $row = $query->fetch();
+            
+            if($row){
+                $juoksija = new Juoksija(array(
+                    'id' => $row['id'],
+                    'knimi' => $row['knimi'],
+                    'etunimi' => $row['etunimi'],
+                    'sukunimi' => $row['sukunimi'],
+                    'sposti' => $row['sposti']
+                ));
+                return $juoksija;
+            }
+            return null;
+        }
+        
+        
+        
+                public static function findTapahtumat($id){
+            $query = DB::connection()->prepare('SELECT Tapahtuma.id AS id, Tapahtuma.pvm AS pvm, Tapahtuma.aika AS aika,'
+                    . ' Lenkki.nimi AS lenkki FROM Osallistuja LEFT JOIN Tapahtuma ON Osallistuja.tapahtuma = Tapahtuma.id'
+                    . ' LEFT JOIN Lenkki ON Tapahtuma.lenkki=Lenkki.id WHERE Osallistuja.juoksija = :id');
+            $query->execute(array('id' => $id));
+            $rows = $query->fetchAll();
+            $tapahtumat = array();
+            
+            foreach($rows as $row){
+                $tapahtumat[] = new Tapahtuma(array(
+                    'id' => $row['id'],
+                    'lenkki' => $row['lenkki'],
+                    'pvm' => $row['pvm'],
+                    'aika' => $row['aika']
+                ));
+            }
+            return $tapahtumat;
         }
         
         public function save(){
@@ -91,6 +148,9 @@ class Juoksija extends BaseModel{
             }
             if (strlen($this->knimi) < 3){
                 $errors[] = 'käyttäjänimessä pitää olla ainakin kolme kirjainta';
+            }
+            if ($this->findKnimi($this->knimi) != NULL){
+                $errors[] = 'käyttäjänimi on käytössä. Valitse toinen';
             }
             return $errors;
         }

@@ -6,6 +6,13 @@
 </div>
   <h1>{{tapahtuma.lenkki}}</h1>
   
+ {% if user_logged_in%}
+ <form method="post" action="{{base_path}}/lenkki_esittely/{{tapahtuma.id}}/osallistu" style="display: inline-block;">
+  <button type="submit" class="btn btn-success">Osallistu tapahtumaan</button>
+</form>
+  {% endif %}
+  
+  <p></p>
   
   <ul>
     <li><strong>Päivämäärä:</strong> {{tapahtuma.pvm}}</li>

@@ -79,6 +79,14 @@
     JuoksijaController::juoksija($id);
   });  
   
+      $routes->post('/lenkki_esittely/:id/osallistu', function($id) {
+    JuoksijaController::osallistu($id);
+  });  
+  
+     $routes->post('/omasivu/:id/peruOsallistuminen', function($id) {
+    JuoksijaController::peruOsallistuminen($id);
+  }); 
+  
     $routes->post('/juoksija', function() {
     JuoksijaController::store();
   });  
@@ -91,8 +99,16 @@
     JuoksijaController::update($id);
   });  
   
-      $routes->post('/omasivu/:id/destroy', function($id) {
+   $routes->post('/omasivu/:id/destroy', function($id) {
     JuoksijaController::destroy($id);
+  });  
+  
+  $routes->get('/login', function(){
+      UserController::login();
+  });
+  
+  $routes->post('/login', function(){
+      UserController::handle_login();
   });  
   
   

@@ -9,17 +9,12 @@
 
     public static function sandbox(){
         // Testaa koodiasi täällä
-        $testi = new Juoksija(array(
-            'etunimi' => '',
-            'sukunimi' => 'eestiläinen',
-            'knimi' => 'ee',
-            'sposti' => 'aaaaaaa@ffffffe',
-            'salasana' => 'eetueetu'
-        ));  
+        $osallistujat = Osallistuja::all();
+        $id = 46;
+        $testi = Juoksija::findTapahtumat($id);
         
-        $errors = $testi->errors();
-        
-        Kint::dump($errors);
+        Kint::dump($osallistujat);
+        Kint::dump(self::get_user_logged_in()->id);
     }
 
     public static function etusivu(){
