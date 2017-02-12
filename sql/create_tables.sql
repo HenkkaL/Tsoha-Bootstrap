@@ -32,6 +32,6 @@ kuvaus varchar(1000)
 );
 
 CREATE TABLE Osallistuja(
-juoksija INTEGER REFERENCES Juoksija(id),
-Tapahtuma INTEGER REFERENCES Tapahtuma(id)
+juoksija INTEGER REFERENCES Juoksija(id) ON DELETE CASCADE,
+tapahtuma INTEGER REFERENCES Tapahtuma(id) ON DELETE CASCADE
 );

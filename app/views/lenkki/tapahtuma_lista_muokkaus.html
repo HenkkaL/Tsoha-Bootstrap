@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
 
 
   <h1>Lenkkitapahtumien muokkaus</h1>
@@ -34,4 +35,5 @@
       {% endfor %}
     </tbody>
   </table>
+  {% endif %}
 {% endblock %}

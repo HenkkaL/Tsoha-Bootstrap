@@ -28,7 +28,8 @@ class LenkkiController extends BaseController{
     
     public static function tapahtuma($id){
         $tapahtuma = Tapahtuma::find($id);
-        View::make('lenkki/lenkki_esittely.html', array('tapahtuma' => $tapahtuma));
+        $juoksijat = Osallistuja::tapahtumanJuoksijat($id);
+        View::make('lenkki/lenkki_esittely.html', array('tapahtuma' => $tapahtuma, 'juoksijat' => $juoksijat));
     }
     
     

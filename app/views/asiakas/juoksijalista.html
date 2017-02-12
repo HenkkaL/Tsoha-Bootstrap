@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+  {% if user_logged_in %}
 
   <h1>Juoksijalista</h1>
 
@@ -22,9 +22,12 @@
         <td>{{juoksija.etunimi}}</td>
         <td>{{juoksija.sposti}}</td>
         <td>{{juoksija.knimi}}</td>
-        <th><a href="{{base_path}}/omasivu/{{juoksija.id}}" class="btn btn-success">Katsele</a></th>
+        <th> <form method="post" action="{{base_path}}/omasivu/{{juoksija.id}}/destroy" style="display: inline-block;">
+  <button type="submit" class="btn btn-danger">Poista</button>
+</form></th>
        </tr>
       {% endfor %}
     </tbody>
   </table>
+    {% endif%}
 {% endblock %}

@@ -30,7 +30,7 @@
             
             if(count($errors) == 0){
                 $juoksija->save();
-                Redirect::to('/omasivu/' .$juoksija->id, array('message' => 'Uusi juoksija lisätty'));                
+                Redirect::to('/login', array('message' => 'Uusi juoksija lisätty'));                
             } else { View::make('asiakas/register.html', array('errors' => $errors, 'attributes' => $attributes));
             }              
         }   

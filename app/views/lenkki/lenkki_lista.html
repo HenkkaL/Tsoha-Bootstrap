@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
 
 <h1>Lenkkitapahtumat</h1>
-
+<p></p>
+<strong>Painamalla valitse nappia, pääset tutustumaan tapahtuman tarkempiin tietoihin sekä ilmoittautumaan osallistujaksi</strong>
+<p></p>
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -27,4 +30,6 @@
       {% endfor %}
     </tbody>
   </table>
+
+  {% endif %}
 {% endblock %}

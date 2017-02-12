@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
+  
   <h1>Luo lenkkitapahtuma</h1>
   
     <h2>Valitse lenkkilistasta juoksutapahtumalle lenkki</h2>
@@ -28,9 +30,7 @@
     </div>
     </tbody>
   </table>
-    <p>
-    <a type="submit" class="btn btn-success">Luo uusi lenkki</a>
-  </p>
-  </form>
 
+  </form>
+  {% endif %}
 {% endblock %}

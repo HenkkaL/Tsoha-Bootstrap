@@ -49,6 +49,20 @@ class Osallistuja extends BaseModel{
             return $tapahtumat;
         }
         
+        public static function tapahtumanJuoksijat($tapahtuma){
+                       $query = DB::connection()->prepare('SELECT knimi FROM Osallistuja LEFT JOIN Juoksija ON Osallistuja.juoksija = Juoksija.id WHERE Osallistuja.tapahtuma = :tapahtuma');
+            $query->execute(array('tapahtuma' => $tapahtuma));
+            $rows = $query->fetchAll();
+            $juoksijat = array();
+            
+            foreach($rows as $row){
+                $juoksijat[] = new Juoksija(array(
+                    'knimi' => $row['knimi']
+                ));
+            }
+            return $juoksijat;
+        }        
+        
         public function save(){
             $query = DB::connection()->prepare('INSERT INTO Osallistuja (juoksija, tapahtuma) VALUES (:juoksija, :tapahtuma)');
             $query->execute(array('juoksija' => $this->juoksija, 'tapahtuma' => $this->tapahtuma));

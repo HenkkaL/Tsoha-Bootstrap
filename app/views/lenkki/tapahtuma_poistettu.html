@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
+  
   <h1>Lenkkikerho</h1>
   
   <div class="alert alert-success">
   {{message}}  
 </div>
 
-
+  {% endif %}
 {% endblock %}

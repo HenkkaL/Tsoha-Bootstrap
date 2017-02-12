@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in%}
   <h1>Luo uusi lenkki</h1>
 
   <form>
@@ -50,4 +51,5 @@
       <a href="lenkki_muokkaus" class="btn btn-success">Takaisin lenkkikuvauksen muokkaukseen</a>
     </div>
   </form>
+  {% endif %}
 {% endblock %}

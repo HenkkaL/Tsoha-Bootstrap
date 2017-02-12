@@ -2,7 +2,7 @@
 {% block content %}
   {% if user_logged_in%}
  <h1>Muokkaa käyttäjän {{user_logged_in.knimi}} asiakastietoja</h1>
-{% endif %}
+
 
    {% if errors %}
  <div class="alert alert-danger">
@@ -14,30 +14,30 @@
  </div>
  {% endif %}
  
-  <form method="post" action="{{base_path}}/omasivu/{{juoksija.id}}/edit">
+  <form method="post" action="{{base_path}}/omasivu/{{user_logged_in.id}}/edit">
     <div class="form-group">
       <label>Etunimi</label>
-      <input type="text" class="form-control" name="etunimi" value={{juoksija.etunimi}}>
+      <input type="text" class="form-control" name="etunimi" value={{user_logged_in.etunimi}}>
     </div>
 
     <div class="form-group">
       <label>Sukunimi</label>
-      <input type="text" class="form-control" name="sukunimi" value={{juoksija.sukunimi}}>
+      <input type="text" class="form-control" name="sukunimi" value={{user_logged_in.sukunimi}}>
     </div>
 
     <div class="form-group">
       <label>Sähköpostiosoite</label>
-      <input type="text" class="form-control" name="sposti" value={{juoksija.sposti}}>
+      <input type="text" class="form-control" name="sposti" value={{user_logged_in.sposti}}>
     </div>
 
     <div class="form-group">
       <label>Käyttäjätunnus</label>
-      <input type="text" class="form-control" name="knimi" value={{juoksija.knimi}}>
+      <input type="text" class="form-control" name="knimi" value={{user_logged_in.knimi}}>
     </div>
 
     <div class="form-group">
       <label>Salasana</label>
-      <input type="password" class="form-control" name="salasana" value={{juoksija.salasana}}>
+      <input type="password" class="form-control" name="salasana" value={{user_logged_in.salasana}}>
     </div>
 
 
@@ -47,9 +47,9 @@
 
  <p></p>
  
- <form method="post" action="{{base_path}}/omasivu/{{juoksija.id}}/destroy" style="display: inline-block;">
+ <form method="post" action="{{base_path}}/omasivu/{{user_logged_in.id}}/destroy" style="display: inline-block;">
   <button type="submit" class="btn btn-danger">Poista</button>
 </form>
  
-
+  {% endif %}
 {% endblock %}

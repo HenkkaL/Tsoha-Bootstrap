@@ -148,8 +148,9 @@ class Juoksija extends BaseModel{
             }
             if (strlen($this->knimi) < 3){
                 $errors[] = 'käyttäjänimessä pitää olla ainakin kolme kirjainta';
-            }
-            if ($this->findKnimi($this->knimi) != NULL){
+            }  
+            $apujuoksija = $this->findKnimi($this->knimi);
+            if ($apujuoksija != NULL && $apujuoksija->id != $this->id){
                 $errors[] = 'käyttäjänimi on käytössä. Valitse toinen';
             }
             return $errors;
@@ -171,8 +172,8 @@ class Juoksija extends BaseModel{
             if ($this->salasana == '' || $this->salasana == null){
                 $errors[] = 'Salasana on pakollinen kenttä';                        
             }
-            if (strlen($this->salasana) < 8){
-                $errors[] = 'Salasanassa pitää olla ainakin kahdeksan kirjainta';
+            if (strlen($this->salasana) < 3){
+                $errors[] = 'Salasanassa pitää olla ainakin kolme kirjainta';
             }
             return $errors;
         }        

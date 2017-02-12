@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
+
   <h1>Luo uusi lähtöpaikka</h1>
 
   <form>
@@ -21,4 +23,6 @@
       <button type="submit" class="btn btn-primary">Tallenna</button>      
     </div>
   </form>
+  
+  {% endif %}
 {% endblock %}

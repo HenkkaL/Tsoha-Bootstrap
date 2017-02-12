@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
+  {% if user_logged_in %}
 <div class="alert alert-success">
   {{message}}
 </div>
   <h1>{{tapahtuma.lenkki}}</h1>
   
- {% if user_logged_in%}
  <form method="post" action="{{base_path}}/lenkki_esittely/{{tapahtuma.id}}/osallistu" style="display: inline-block;">
   <button type="submit" class="btn btn-success">Osallistu tapahtumaan</button>
 </form>
-  {% endif %}
+
   
   <p></p>
   
@@ -36,4 +35,22 @@
     <p>
     {{tapahtuma.starttikuvaus}}
   </p>
+  
+   <h3>Osallistujalista</h3>
+    <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Käyttäjänimi</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for juoksija in juoksijat %}
+      <tr>
+        <td>{{juoksija.knimi}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% endif %}
 {% endblock %}

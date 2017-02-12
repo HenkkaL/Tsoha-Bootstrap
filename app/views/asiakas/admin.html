@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Valitse toiminto</h1>
-  <a href="{{base_path}}/lenkki_uusi" class="btn btn-danger">Luo lenkkitapahtuma</a>
-  <a href="{{base_path}}/tapahtuma_lista_muokkaus" class="btn btn-danger">Muokkaa lenkkitapahtumaa</a>
-  <a href="{{base_path}}/juoksijalista" class="btn btn-danger">Asiakastiedot</a>
+    {% if user_logged_in %}
+        <h1>Valitse toiminto</h1>
+        <a href="{{base_path}}/lenkki_uusi" class="btn btn-danger">Luo lenkkitapahtuma</a>
+        <a href="{{base_path}}/tapahtuma_lista_muokkaus" class="btn btn-danger">Muokkaa lenkkitapahtumaa</a>
+        <a href="{{base_path}}/juoksijalista" class="btn btn-danger">Asiakastiedot</a>
 
-
+{% endif %}
 {% endblock %}

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
+
   <h1>Luo lenkkitapahtuma</h1>
   
   <h2>{{lenkki.nimi}}</h2>
@@ -37,5 +39,5 @@
   <p>
     {{lenkki.reitti}}
   </p>
-  
+  {% endif %}
 {% endblock %}

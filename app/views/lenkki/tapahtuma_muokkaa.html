@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+  {% if user_logged_in %}
+  
   <h1>Muokkaa lenkkitapahtumaa</h1>
   
   <h2>{{tapahtuma.nimi}}</h2>
@@ -20,8 +22,9 @@
       <label>Lenkkikohtaista lisätietoa</label>
         <textarea name="kuvaus" value={{tapahtuma.kuvaus}} class="form-control"></textarea>
     </div>
+      <p></p>
       <div class="form-group">
-      <button type="submit" class="btn btn-primary">Tallenna</button>
+          <button type="submit" class="btn btn-primary">Tallenna</button>
     </div>
       
   </form>
@@ -42,4 +45,5 @@
     {{tapahtuma.reitti}}
   </p>
   
+  {% endif %}
 {% endblock %}
