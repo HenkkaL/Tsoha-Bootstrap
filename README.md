@@ -37,3 +37,4 @@ Tarkoitukseni on toteuttaa eräälle lenkkikerholle pieni sovellus, jonka avulla
 
 Sovelluksen ylläpitäjä on kerhon sihteeri, joka päivittää tiedot tulevista lenkeistä. Osallistujien ilmoittautumisen lisäksi, sovellus tarjoaa oivan paikan ylläpitää lenkkeihin liittyvää sellaisista lenkeistä joita kerholla on tapana juosta. Lenkkejä voi kuvailla pituuden, mäkisyyden ja haastavuuden perusteella. Lisäksi lenkkireittien kuvailu ja kokoontumispaikat on syytä tiedottaa.
 
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Lenkkikerho</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
