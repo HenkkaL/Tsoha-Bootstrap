@@ -1,5 +1,8 @@
 <?php
 class Tapahtuma extends BaseModel{
+    /*Tapahtuma -luokka sisältää metodit tapahtumien listaamiseen sekä etsimiseen.
+     * Lisäksi luokassa on metodit tapahtumien luomiseksi, muokkaamiseksi sekä poistamiseksi.
+     * Tapahtumien validoinnit toteutetaan tässä luokassa. */
 	public $id, $pvm, $aika, $kuvaus, $lenkki, $reitti, $startti, $matka, $osoite, $starttikuvaus;
 	public function __construct($attributes){
 		parent::__construct($attributes);
@@ -65,8 +68,8 @@ class Tapahtuma extends BaseModel{
         }  
         
         public function update(){
-            $query = DB::connection()->prepare('UPDATE Tapahtuma SET pvm=:pvm, aika=:aika, kuvaus=:kuvaus, lenkki=:lenkki WHERE id=:id' );
-            $query->execute(array('pvm' => $this->pvm, 'aika' => $this->aika, 'kuvaus' => $this->kuvaus, 'lenkki' => $this->lenkki, 'id' => $this->id));
+            $query = DB::connection()->prepare('UPDATE Tapahtuma SET pvm=:pvm, aika=:aika, kuvaus=:kuvaus WHERE id=:id');
+            $query->execute(array('pvm' => $this->pvm, 'aika' => $this->aika, 'kuvaus' => $this->kuvaus, 'id' => $this->id));
             $row = $query->fetch();              
         }          
         

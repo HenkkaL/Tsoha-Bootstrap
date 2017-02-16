@@ -1,5 +1,7 @@
 <?php
 class Lenkki extends BaseModel{
+    /*Lenkki -luokassa on metodit lenkkien listaamiselle sekä tietyn lenkin
+     * lenkin hakemiselle. Toimet avustavat tapahtumien luomista. */
 	public $id, $nimi, $matka, $reitti, $startti;
 	public function __construct($attributes){
 		parent::__construct($attributes);

@@ -1,7 +1,7 @@
 <?php
 
 class User extends BaseModel {
-
+/*Luokassa juoksijan autentikointi. */
     public static function authenticate() {
         $query = DB::connection()->prepare('SELECT * FROM Juoksija WHERE knimi = :knimi AND salasana = :salasana LIMIT 1');
         $query->execute(array('knimi' => $knimi, 'salasana' => $salasana));

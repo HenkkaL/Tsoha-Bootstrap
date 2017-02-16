@@ -4,9 +4,11 @@
   
  <h1>Käyttäjän {{user_logged_in.knimi}} asiakastiedot</h1>
 
+ {% if message %}
   <div class="alert alert-success">
   {{message}}  
 </div>
+ {% endif %}
  
   <ul>
     <li><strong>Etunimi:</strong> {{user_logged_in.etunimi}}</li>

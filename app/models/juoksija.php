@@ -1,5 +1,8 @@
 <?php
 class Juoksija extends BaseModel{
+    /*Juoksija luokka huolehtii juoksijatauluun liittyvistä hauista, uusien 
+     * tietueiden luomisesta, päivityksistä ja poistoista. Lisäksi luokassa on 
+     * validointimetodit juoksijatauluun kohdistuville toimenpiteille. */
 	public $id, $knimi, $etunimi, $sukunimi, $sposti, $salasana;
 	public function __construct($attributes){
 		parent::__construct($attributes);

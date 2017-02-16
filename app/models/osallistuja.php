@@ -1,5 +1,8 @@
 <?php
 class Osallistuja extends BaseModel{
+    /*Osallistuja -luokka huolehtii osallistuja nimiseen liitostauluun kohdistuvista
+    toimista. Luokassa etsintä- ja listausmetodien lisäksi metodi uusien osallistujien
+     * lisäämiseksi ja olemassaolevien poistamiseksi. */
 	public $juoksija, $tapahtuma;
 	public function __construct($attributes){
 		parent::__construct($attributes);
