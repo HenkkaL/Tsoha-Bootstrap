@@ -15,8 +15,8 @@ INSERT INTO Tapahtuma (pvm, aika, kuvaus, Lenkki) Values ('2017-06-01', '08:30',
 INSERT INTO Tapahtuma (pvm, aika, kuvaus, Lenkki) Values ('2017-07-01', '14:15', 'Lenkki juostaan hitaana', '4');
 INSERT INTO Tapahtuma (pvm, aika, kuvaus, Lenkki) Values ('2017-06-06', '15:00', 'Lenkillä vauhtileikittelyä', '1');
 
-INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('Salama', 'Hannu', 'konstikas', 'hannu@gmail.com', 'salama123');
-INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('Jänis', 'Eetu', 'Esimerkki', 'eetu.eetu@gmail.com', 'jänis123');
+INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('admin', 'pääkäyttäjä', 'pääkäyttäjä', 'admin@admin', 'admin');
+INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('testikäyttäjä', 'Eetu', 'Esimerkki', 'testi@käyttäjä', 'testikäyttäjä');
 INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('Jaksu', 'Janne', 'Juoksija', 'janne.juoksija@gmail.com', 'jaksu123');
 INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('Urakka', 'Paavo', 'Pinkoja', 'paav0@gmail.com', 'urakka123');
 INSERT INTO Juoksija (knimi, etunimi, sukunimi, sposti, salasana) Values ('Puhki', 'Kiri', 'Keisari', 'hannu@gmail.com', 'puhki123');
