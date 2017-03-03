@@ -54,9 +54,14 @@ class JuoksijaController extends BaseController {
         );
         $juoksija = new Juoksija($attributes);
         $errors = $juoksija->errors();
-
-        if (count($errors) > 0) {
+        if ($juoksija->find($id)->knimi == 'admin' && $juoksija->knimi != 'admin'){
+            $juoksija->knimi = 'admin';
+            $errors = array();
+            $errors[] = 'Pääkäyttäjän käyttäjänimeä ei voi vaihtaa';
             View::make('asiakas/juoksija_muokkaa.html', array('errors' => $errors, 'juoksija' => $juoksija));
+        }
+        if (count($errors) > 0) {
+            View::make('asiakas/juoksija_muokkaa.html', array('errors' => $errors, 'juoksija' => $juoksija));        
         } else {
             $juoksija->update();
             Redirect::to('/omasivu/' . $juoksija->id, array('message' => 'Tiedot päivitetty'));
@@ -65,9 +70,15 @@ class JuoksijaController extends BaseController {
 
     public static function destroy($id) {
         $juoksija = new Juoksija(array('id' => $id));
-        $juoksija->destroy();
+        
+        if ($juoksija->find($id)->knimi == 'admin'){
+            View::make('/asiakas/juoksija_poistettu.html', array('message' => 'Pääkäyttäjää ei voi poistaa'));
+        } else {
+            $juoksija->destroy();
+            View::make('/asiakas/juoksija_poistettu.html', array('message' => 'Juoksijan asiakastiedot on poistettu'));
+        }
 
-        View::make('/asiakas/juoksija_poistettu.html', array('message' => 'Juoksijan asiakastiedot on poistettu'));
+       
     }
 
     public static function osallistu($tapahtuma_id) {

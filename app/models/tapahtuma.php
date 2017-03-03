@@ -90,7 +90,7 @@ class Tapahtuma extends BaseModel{
         
         public function validate_aika(){
             $errors = array();
-            if ($this->pvm == '' || $this->pvm == null){
+            if ($this->aika == '' || $this->aika == null){
                 $errors[] = 'Tapahtumalla pitää olla lähtöaika';                        
             }
             return $errors;

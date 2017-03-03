@@ -78,7 +78,7 @@ class LenkkiController extends BaseController {
             $tapahtuma->update();
             Redirect::to('/lenkki_esittely/' . $tapahtuma->id, array('message' => 'Lenkkitapahtuma muokattu'));
         } else {
-            View::make('lenkki/lenkki_muokkaus.html', array('errors' => $errors, 'attributes' => $attributes));
+            View::make('lenkki/tapahtuma_muokkaa.html', array('errors' => $errors, 'tapahtuma' => $tapahtuma));
         }
     }
 
